@@ -95,8 +95,6 @@ export function Footer() {
                     </FooterColumn>
                     <FooterColumn title={t('company.title')}>
                         <FooterLink href="/about">{t('company.about')}</FooterLink>
-                        <FooterLink href="/careers">{t('company.careers')}</FooterLink>
-                        <FooterLink href="/press">{t('company.press')}</FooterLink>
                         <FooterLink href="/stories">{t('company.stories')}</FooterLink>
                     </FooterColumn>
                     <FooterColumn title={t('support.title')}>
