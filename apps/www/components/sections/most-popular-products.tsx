@@ -8,7 +8,6 @@ import { useProducts } from '@/hooks/use-products';
 import { ProductCard } from '@/components/product-card';
 import { ErrorMessage } from '@/components/error-message';
 
-// Number of products to display in this section
 const DISPLAY_COUNT = 4;
 
 export function MostPopularProducts() {
@@ -20,28 +19,25 @@ export function MostPopularProducts() {
     });
 
     return (
-        <section className="py-16 sm:py-24 bg-white">
+        <section className="py-16 sm:py-24 bg-background">
             <Container>
-                {/* ─── Header ───────────────────────────────────────────── */}
                 <div className="flex items-end justify-between mb-10 sm:mb-14">
                     <div>
-                        <p className="text-[10px] tracking-[0.3em] text-neutral-400 uppercase mb-2">
+                        <p className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase mb-2">
                             {t('eyebrow')}
                         </p>
-                        <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-neutral-900">
+                        <h2 className="text-3xl sm:text-4xl   tracking-tight text-neutral-900">
                             {t('headline')}
                         </h2>
                     </div>
                     <Link
                         href="/shop"
-                        className="hidden sm:inline-flex items-center gap-2 text-xs tracking-[0.2em] text-neutral-500 uppercase hover:text-neutral-900 transition-colors group"
+                        className="hidden sm:inline-flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground/90 uppercase hover:text-neutral-900 transition-colors group"
                     >
                         {t('viewAll')}
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                 </div>
-
-                {/* ─── Content ──────────────────────────────────────────── */}
                 {isError ? (
                     <ErrorMessage
                         message={error?.message}
@@ -51,7 +47,7 @@ export function MostPopularProducts() {
                     <PopularProductsSkeleton />
                 ) : !data || data.data.length === 0 ? (
                     <div className="text-center py-12">
-                        <p className="text-sm text-neutral-400">No products available.</p>
+                        <p className="text-sm text-muted-foreground">No products available.</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
@@ -68,12 +64,10 @@ export function MostPopularProducts() {
                         ))}
                     </div>
                 )}
-
-                {/* Mobile "View All" */}
                 <div className="mt-10 text-center sm:hidden">
                     <Link
                         href="/shop"
-                        className="inline-flex items-center gap-2 text-xs tracking-[0.2em] text-neutral-500 uppercase hover:text-neutral-900 transition-colors group"
+                        className="inline-flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground/90 uppercase hover:text-neutral-900 transition-colors group"
                     >
                         {t('viewAll')}
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />

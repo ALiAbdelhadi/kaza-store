@@ -63,7 +63,7 @@ function Field({
 }) {
     return (
         <div className="space-y-1.5">
-            <label className="flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-neutral-500">
+            <label className="flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-muted-foreground/90">
                 {label}
                 {optional && (
                     <span className="normal-case tracking-normal text-[10px] text-neutral-300">
@@ -81,7 +81,7 @@ function Field({
 
 function inputCls(hasError: boolean) {
     return cn(
-        'w-full border px-4 py-3 text-sm font-light rounded-sm bg-white',
+        'w-full border px-4 py-3 text-sm   rounded-sm bg-background',
         'focus:outline-none transition-colors placeholder:text-neutral-300',
         hasError
             ? 'border-red-300 focus:border-red-500'
@@ -199,7 +199,7 @@ export default function SignupPage() {
                                 </span>
                             ))}
                         </div>
-                        <p className="text-2xl font-light text-white/80 leading-snug max-w-xs">
+                        <p className="text-2xl   text-white/80 leading-snug max-w-xs">
                             Join thousands of customers who shop smarter with Kaza Store.
                         </p>
                     </div>
@@ -217,20 +217,20 @@ export default function SignupPage() {
                         href="/"
                         className="lg:hidden block text-xl tracking-wider text-blue-500 font-semibold"
                     >
-                        Kaza.<span className="text-neutral-400">Store</span>
+                        Kaza.<span className="text-muted-foreground">Store</span>
                     </Link>
                     <div className="space-y-1">
-                        <h1 className="text-3xl font-light tracking-tight text-neutral-900">
+                        <h1 className="text-3xl   tracking-tight text-neutral-900">
                             Create account
                         </h1>
-                        <p className="text-sm text-neutral-400 font-light">
+                        <p className="text-sm text-muted-foreground  ">
                             Join Kaza.Store for exclusive access & faster checkout
                         </p>
                     </div>
                     <form onSubmit={handleSubmit} noValidate className="space-y-5">
                         {errors.root && (
                             <div className="bg-red-50 border border-red-200 rounded-sm px-4 py-3">
-                                <p className="text-sm text-red-600 font-light">{errors.root}</p>
+                                <p className="text-sm text-red-600  ">{errors.root}</p>
                             </div>
                         )}
                         <div className="grid grid-cols-2 gap-4">
@@ -299,7 +299,7 @@ export default function SignupPage() {
                                     type="button"
                                     onClick={() => setShowPass((v) => !v)}
                                     aria-label={showPass ? 'Hide password' : 'Show password'}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 transition-colors"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-neutral-700 transition-colors"
                                 >
                                     {showPass ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                 </button>
@@ -321,7 +321,7 @@ export default function SignupPage() {
                                     </div>
                                     {strength.label && (
                                         <p className={cn(
-                                            'text-[11px] font-light',
+                                            'text-[11px]  ',
                                             strength.score <= 1 ? 'text-red-400'
                                                 : strength.score === 2 ? 'text-amber-500'
                                                     : strength.score === 3 ? 'text-blue-500'
@@ -349,7 +349,7 @@ export default function SignupPage() {
                                     type="button"
                                     onClick={() => setShowConfirm((v) => !v)}
                                     aria-label={showConfirm ? 'Hide password' : 'Show password'}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 transition-colors"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-neutral-700 transition-colors"
                                 >
                                     {showConfirm ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                 </button>
@@ -368,8 +368,8 @@ export default function SignupPage() {
                                         agreed
                                             ? 'bg-neutral-900 border-neutral-900'
                                             : agreedError
-                                                ? 'border-red-400 bg-white'
-                                                : 'border-neutral-300 bg-white group-hover:border-neutral-500'
+                                                ? 'border-red-400 bg-background'
+                                                : 'border-neutral-300 bg-background group-hover:border-neutral-500'
                                     )}
                                     onClick={() => { setAgreed((v) => !v); setAgreedError(false); }}
                                     role="checkbox"
@@ -379,7 +379,7 @@ export default function SignupPage() {
                                 >
                                     {agreed && <Check className="w-2.5 h-2.5 text-white" />}
                                 </span>
-                                <span className="text-xs text-neutral-500 font-light leading-relaxed">
+                                <span className="text-xs text-muted-foreground/90   leading-relaxed">
                                     I agree to the{' '}
                                     <Link href="/terms" className="text-neutral-800 underline underline-offset-2 hover:text-neutral-600">
                                         Terms of Service
@@ -424,12 +424,12 @@ export default function SignupPage() {
                             <span className="w-full border-t border-neutral-200" />
                         </div>
                         <div className="relative flex justify-center">
-                            <span className="px-4 bg-neutral-50 text-xs text-neutral-400 tracking-widest uppercase">
+                            <span className="px-4 bg-neutral-50 text-xs text-muted-foreground tracking-widest uppercase">
                                 or
                             </span>
                         </div>
                     </div>
-                    <p className="text-center text-sm text-neutral-500 font-light pb-4">
+                    <p className="text-center text-sm text-muted-foreground/90   pb-4">
                         Already have an account?{' '}
                         <Link
                             href="/login"

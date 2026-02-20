@@ -12,18 +12,17 @@ export default function CheckoutPage() {
     const { data: cart, isLoading, isError, error, refetch } = useCart();
 
     return (
-        <main className="min-h-screen bg-white pt-20">
+        <main className="min-h-screen bg-background pt-20">
             <Container className="py-12">
-                {/* Header */}
                 <div className="mb-10">
                     <Link
                         href="/cart"
-                        className="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors mb-4"
+                        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-neutral-900 transition-colors mb-4"
                     >
                         <ChevronLeft className="w-4 h-4" />
                         Back to Bag
                     </Link>
-                    <h1 className="text-3xl font-light tracking-wide">Checkout</h1>
+                    <h1 className="text-3xl   tracking-wide">Checkout</h1>
                 </div>
 
                 {isLoading ? (

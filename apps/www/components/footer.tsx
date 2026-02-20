@@ -39,7 +39,7 @@ export function Footer() {
                             Kaza.
                             <span className="text-muted-foreground">Store</span>
                         </Link>
-                        <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-xs">
+                        <p className="text-sm text-muted-foreground   leading-relaxed max-w-xs">
                             {t('tagline')}
                         </p>
                         <div>
@@ -47,7 +47,7 @@ export function Footer() {
                                 {t('newsletter.label')}
                             </p>
                             {status === 'success' ? (
-                                <p className="text-sm text-muted-foreground font-light">
+                                <p className="text-sm text-muted-foreground  ">
                                     ✓ You&apos;re subscribed. Welcome to the loop.
                                 </p>
                             ) : (
@@ -59,7 +59,7 @@ export function Footer() {
                                         placeholder={t('newsletter.placeholder')}
                                         required
                                         disabled={status === 'loading'}
-                                        className="flex-1 min-w-0 bg-muted border border-border border-e-0 rounded-s-sm px-4 py-2.5 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-colors disabled:opacity-50"
+                                        className="flex-1 min-w-0 bg-muted border border-border border-e-0 rounded-s-sm px-4 py-2.5 text-sm   text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-colors disabled:opacity-50"
                                     />
                                     <button
                                         type="submit"
@@ -148,7 +148,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
         <li>
             <Link
                 href={href}
-                className="text-sm text-muted-foreground hover:text-foreground font-light transition-colors duration-200"
+                className="text-sm text-muted-foreground hover:text-foreground   transition-colors duration-200"
             >
                 {children}
             </Link>

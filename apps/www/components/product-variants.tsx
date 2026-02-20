@@ -44,11 +44,10 @@ export default function ProductVariants({
 
     return (
         <div className="space-y-8">
-            {/* Color Selector */}
             <div>
                 <div className="flex items-center justify-between mb-4">
                     <label className="text-sm font-medium tracking-wide">
-                        Product Color: <span className="font-light">{selectedVariantData?.name || 'Select'}</span>
+                        Product Color: <span className=" ">{selectedVariantData?.name || 'Select'}</span>
                     </label>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -75,8 +74,6 @@ export default function ProductVariants({
                     ))}
                 </div>
             </div>
-
-            {/* Size Selector */}
             <div>
                 <div className="flex items-center justify-between mb-4">
                     <label className="text-sm font-medium tracking-wide">
@@ -93,10 +90,10 @@ export default function ProductVariants({
                             onClick={() => handleSizeSelect(size.id)}
                             disabled={!size.available}
                             className={`
-                py-3 text-sm font-light tracking-wider border transition-all
+                py-3 text-sm   tracking-wider border transition-all
                 ${selectedSize === size.id
                                     ? 'border-neutral-900 bg-neutral-900 text-white'
-                                    : 'border-neutral-300 bg-white text-neutral-900 hover:border-neutral-900'
+                                    : 'border-neutral-300 bg-background text-neutral-900 hover:border-neutral-900'
                                 }
                 ${!size.available ? 'opacity-30 cursor-not-allowed line-through' : 'cursor-pointer'}
               `}
@@ -106,8 +103,6 @@ export default function ProductVariants({
                     ))}
                 </div>
             </div>
-
-            {/* Quantity Selector */}
             <div>
                 <label className="text-sm font-medium tracking-wide mb-4 block">
                     Quantity
@@ -121,7 +116,7 @@ export default function ProductVariants({
                     >
                         <Minus className="w-4 h-4" />
                     </button>
-                    <span className="text-lg font-light w-8 text-center">{quantity}</span>
+                    <span className="text-lg   w-8 text-center">{quantity}</span>
                     <button
                         onClick={() => handleQuantityChange(quantity + 1)}
                         disabled={quantity >= 10}

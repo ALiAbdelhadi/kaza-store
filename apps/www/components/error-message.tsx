@@ -14,7 +14,7 @@ export function ErrorMessage({
 }: ErrorMessageProps) {
     return (
         <div className={cn('flex flex-col items-center justify-center py-24 text-center', className)}>
-            <p className="text-sm text-neutral-500 mb-4">{message}</p>
+            <p className="text-sm text-muted-foreground/90 mb-4">{message}</p>
             {onRetry && (
                 <Button variant="outline" size="sm" onClick={onRetry}>
                     Try Again

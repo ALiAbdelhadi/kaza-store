@@ -35,7 +35,7 @@ function Field({
 }) {
     return (
         <div className="space-y-1.5">
-            <label className="block text-[11px] tracking-[0.18em] uppercase text-neutral-500">
+            <label className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground/90">
                 {label}
             </label>
             {children}
@@ -48,7 +48,7 @@ function Field({
 
 function inputCls(hasError: boolean) {
     return cn(
-        'w-full border px-4 py-3 text-sm font-light rounded-sm bg-white',
+        'w-full border px-4 py-3 text-sm   rounded-sm bg-background',
         'focus:outline-none transition-colors placeholder:text-neutral-300',
         hasError
             ? 'border-red-300 focus:border-red-500'
@@ -132,7 +132,7 @@ export default function LoginPage() {
                         Kaza.<span className="text-white/50">Store</span>
                     </Link>
                     <blockquote className="max-w-xs">
-                        <p className="text-xl font-light text-white/80 leading-snug italic">
+                        <p className="text-xl   text-white/80 leading-snug italic">
                             &quot;Style is a way to say who you are without having to speak.&quot;
                         </p>
                         <footer className="mt-3 text-xs tracking-widest text-white/40 uppercase">
@@ -147,20 +147,20 @@ export default function LoginPage() {
                         href="/"
                         className="lg:hidden block text-xl tracking-wider text-blue-500 font-semibold"
                     >
-                        Kaza.<span className="text-neutral-400">Store</span>
+                        Kaza.<span className="text-muted-foreground">Store</span>
                     </Link>
                     <div className="space-y-1">
-                        <h1 className="text-3xl font-light tracking-tight text-neutral-900">
+                        <h1 className="text-3xl   tracking-tight text-neutral-900">
                             Welcome back
                         </h1>
-                        <p className="text-sm text-neutral-400 font-light">
+                        <p className="text-sm text-muted-foreground  ">
                             Sign in to your account to continue
                         </p>
                     </div>
                     <form onSubmit={handleSubmit} noValidate className="space-y-5">
                         {errors.root && (
                             <div className="bg-red-50 border border-red-200 rounded-sm px-4 py-3">
-                                <p className="text-sm text-red-600 font-light">{errors.root}</p>
+                                <p className="text-sm text-red-600  ">{errors.root}</p>
                             </div>
                         )}
                         <Field label="Email" error={errors.email}>
@@ -191,7 +191,7 @@ export default function LoginPage() {
                                     type="button"
                                     onClick={() => setShowPass((v) => !v)}
                                     aria-label={showPass ? 'Hide password' : 'Show password'}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 transition-colors"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-neutral-700 transition-colors"
                                 >
                                     {showPass ? (
                                         <EyeOff className="w-4 h-4" />
@@ -204,7 +204,7 @@ export default function LoginPage() {
                         <div className="flex justify-end">
                             <Link
                                 href="/auth/forgot-password"
-                                className="text-xs text-neutral-400 hover:text-neutral-700 tracking-wide transition-colors border-b border-neutral-200 hover:border-neutral-600 pb-px"
+                                className="text-xs text-muted-foreground hover:text-neutral-700 tracking-wide transition-colors border-b border-neutral-200 hover:border-neutral-600 pb-px"
                             >
                                 Forgot password?
                             </Link>
@@ -237,12 +237,12 @@ export default function LoginPage() {
                             <span className="w-full border-t border-neutral-200" />
                         </div>
                         <div className="relative flex justify-center">
-                            <span className="px-4 bg-neutral-50 text-xs text-neutral-400 tracking-widest uppercase">
+                            <span className="px-4 bg-neutral-50 text-xs text-muted-foreground tracking-widest uppercase">
                                 or
                             </span>
                         </div>
                     </div>
-                    <p className="text-center text-sm text-neutral-500 font-light">
+                    <p className="text-center text-sm text-muted-foreground/90  ">
                         Don&apos;t have an account?{' '}
                         <Link
                             href="/signup"

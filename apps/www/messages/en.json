@@ -71,5 +71,243 @@
             "privacy": "Privacy Policy",
             "terms": "Terms of Service"
         }
+    },
+    "about": {
+        "title": "About Us",
+        "subtitle": "Curating the finest fashion for Egypt's modern wardrobe",
+        "mission": {
+            "title": "Our Mission",
+            "description": "At Kaza.Store, we believe that fashion is more than just clothing—it's a form of self-expression. Our mission is to curate the finest fashion brands and bring them to the modern Egyptian woman, making luxury accessible and style effortless."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "We envision a future where every woman in Egypt has access to quality fashion that reflects her unique style and personality. Through carefully selected collections and exceptional service, we aim to become the premier destination for fashion in Egypt."
+        },
+        "values": {
+            "title": "Our Values",
+            "quality": {
+                "title": "Quality First",
+                "description": "We handpick every brand and product to ensure the highest standards of quality and craftsmanship."
+            },
+            "authenticity": {
+                "title": "Authenticity",
+                "description": "We celebrate genuine style and authentic self-expression, supporting brands that share our values."
+            },
+            "service": {
+                "title": "Exceptional Service",
+                "description": "Your satisfaction is our priority. We're committed to providing an unparalleled shopping experience."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We'd love to hear from you",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Thank you! Your message has been sent successfully.",
+            "error": "Something went wrong. Please try again."
+        },
+        "info": {
+            "title": "Get in Touch",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "hours": "Business Hours",
+            "emailValue": "hello@kaza.store",
+            "phoneValue": "+20 123 456 7890",
+            "addressValue": "Cairo, Egypt",
+            "hoursValue": "Sunday - Thursday: 9:00 AM - 6:00 PM"
+        }
+    },
+    "faqs": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know",
+        "shipping": {
+            "title": "Shipping & Delivery",
+            "q1": {
+                "question": "What are your shipping options?",
+                "answer": "We offer standard shipping (5-7 business days) and express shipping (2-3 business days). Free standard shipping is available on orders over EGP 500."
+            },
+            "q2": {
+                "question": "How long does delivery take?",
+                "answer": "Standard delivery takes 5-7 business days, while express delivery takes 2-3 business days. Orders placed before 10 PM are processed the next morning."
+            },
+            "q3": {
+                "question": "Do you ship internationally?",
+                "answer": "Currently, we only ship within Egypt. We're working on expanding our shipping options to other countries."
+            }
+        },
+        "returns": {
+            "title": "Returns & Exchanges",
+            "q1": {
+                "question": "What is your return policy?",
+                "answer": "You can return items within 30 days of purchase, provided they are unworn, unwashed, and in their original packaging with tags attached."
+            },
+            "q2": {
+                "question": "How do I return an item?",
+                "answer": "To initiate a return, please contact our customer service team or visit the Returns page. We'll provide you with a return label and instructions."
+            },
+            "q3": {
+                "question": "How long do refunds take?",
+                "answer": "Refunds are processed within 5-7 business days after we receive your returned item. The amount will be credited back to your original payment method."
+            }
+        },
+        "orders": {
+            "title": "Orders & Tracking",
+            "q1": {
+                "question": "How can I track my order?",
+                "answer": "Once your order ships, you'll receive a tracking number via email. You can also track your order on our Track Order page using your order number."
+            },
+            "q2": {
+                "question": "Can I modify or cancel my order?",
+                "answer": "Orders can be modified or cancelled within 2 hours of placement. After that, please contact customer service for assistance."
+            },
+            "q3": {
+                "question": "What payment methods do you accept?",
+                "answer": "We accept all major credit cards, debit cards, and cash on delivery for orders within Egypt."
+            }
+        },
+        "products": {
+            "title": "Products & Sizing",
+            "q1": {
+                "question": "How do I know my size?",
+                "answer": "Each product page includes detailed size charts and fit information. If you're unsure, our customer service team can help you find the perfect fit."
+            },
+            "q2": {
+                "question": "Are products authentic?",
+                "answer": "Yes, all our products are 100% authentic. We work directly with authorized retailers and brands to ensure authenticity."
+            },
+            "q3": {
+                "question": "What if an item is out of stock?",
+                "answer": "If an item is out of stock, you can sign up for restock notifications. We'll email you as soon as the item becomes available again."
+            }
+        }
+    },
+    "returns": {
+        "title": "Returns & Exchanges",
+        "subtitle": "Easy returns within 30 days",
+        "policy": {
+            "title": "Return Policy",
+            "description": "We want you to love your purchase. If you're not completely satisfied, you can return items within 30 days of purchase.",
+            "conditions": {
+                "title": "Return Conditions",
+                "item1": "Items must be unworn, unwashed, and in original condition",
+                "item2": "Original tags and packaging must be included",
+                "item3": "Items must be returned within 30 days of purchase",
+                "item4": "Proof of purchase (order number or receipt) is required"
+            }
+        },
+        "process": {
+            "title": "How to Return",
+            "step1": {
+                "title": "Initiate Return",
+                "description": "Contact our customer service team or visit your order history to start a return."
+            },
+            "step2": {
+                "title": "Get Return Label",
+                "description": "We'll provide you with a prepaid return label and detailed instructions."
+            },
+            "step3": {
+                "title": "Ship Your Return",
+                "description": "Package your items securely and drop them off at the designated location."
+            },
+            "step4": {
+                "title": "Receive Refund",
+                "description": "Once we receive and inspect your return, we'll process your refund within 5-7 business days."
+            }
+        },
+        "exchanges": {
+            "title": "Exchanges",
+            "description": "Need a different size or color? Exchanges are available for items in stock. Please contact customer service to arrange an exchange."
+        },
+        "contact": {
+            "title": "Need Help?",
+            "description": "If you have any questions about returns or exchanges, please don't hesitate to contact us.",
+            "button": "Contact Customer Service"
+        }
+    },
+    "track": {
+        "title": "Track Your Order",
+        "subtitle": "Enter your order number to track your shipment",
+        "form": {
+            "orderNumber": "Order Number",
+            "email": "Email Address",
+            "track": "Track Order",
+            "tracking": "Tracking...",
+            "placeholder": "Enter order number",
+            "emailPlaceholder": "Enter your email"
+        },
+        "status": {
+            "processing": "Processing",
+            "shipped": "Shipped",
+            "inTransit": "In Transit",
+            "outForDelivery": "Out for Delivery",
+            "delivered": "Delivered"
+        },
+        "notFound": {
+            "title": "Order Not Found",
+            "description": "We couldn't find an order with that number. Please check your order number and try again."
+        },
+        "info": {
+            "orderNumber": "Order Number",
+            "orderDate": "Order Date",
+            "status": "Status",
+            "estimatedDelivery": "Estimated Delivery",
+            "trackingNumber": "Tracking Number",
+            "shippingAddress": "Shipping Address",
+            "orderStatus": "Order Status"
+        }
+    },
+    "newArrivals": {
+        "title": "New Arrivals",
+        "subtitle": "Discover the latest additions to our collection",
+        "viewAll": "View All Products",
+        "noProducts": "No new arrivals at the moment. Check back soon!",
+        "checkBackSoon": "Check back soon for new arrivals!"
+    },
+    "stories": {
+        "title": "Stories",
+        "subtitle": "Discover the stories behind our collections and brands",
+        "readMore": "Read More",
+        "readTime": "min read",
+        "publishedOn": "Published on",
+        "noStories": "No stories available at the moment. Check back soon!",
+        "categories": {
+            "all": "All Stories",
+            "fashion": "Fashion",
+            "lifestyle": "Lifestyle",
+            "brands": "Brands",
+            "sustainability": "Sustainability"
+        }
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Frequently Asked Questions",
+        "searchPlaceholder": "Search for questions...",
+        "noResults": "No questions found matching your search.",
+        "contact": {
+            "title": "Still have questions?",
+            "description": "Can't find what you're looking for? Get in touch with us.",
+            "button": "Contact Us"
+        }
+    },
+    "sale": {
+        "title": "Sale",
+        "subtitle": "Discover amazing deals on selected items",
+        "viewAll": "View All Products",
+        "noProducts": "No sale items available at the moment. Check back soon!",
+        "discount": "OFF",
+        "endingSoon": "Ending Soon",
+        "filter": {
+            "all": "All Sale Items",
+            "upTo30": "Up to 30% OFF",
+            "upTo50": "Up to 50% OFF",
+            "upTo70": "Up to 70% OFF"
+        }
     }
 }

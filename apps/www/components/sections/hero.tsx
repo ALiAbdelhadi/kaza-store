@@ -143,12 +143,12 @@ export function HeroSection() {
                     style={{ animation: 'heroContentIn 0.6s cubic-bezier(0.22,1,0.36,1) both' }}
                 >
                     {/* Eyebrow */}
-                    <p className="text-xs tracking-[0.25em] text-white/70 uppercase mb-4 font-light">
+                    <p className="text-xs tracking-[0.25em] text-white/70 uppercase mb-4  ">
                         {t(slide.eyebrowKey)}
                     </p>
 
                     {/* Headline */}
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-white leading-[1.05] tracking-tight mb-8">
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl   text-white leading-[1.05] tracking-tight mb-8">
                         {headlineLines.map((line, i) => (
                             <span key={i} className="block">
                                 {line}
@@ -177,11 +177,11 @@ export function HeroSection() {
                             className="group relative h-[2px] overflow-hidden cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-full"
                             style={{ width: i === current ? '40px' : '16px', transition: 'width 0.3s ease' }}
                         >
-                            <span className="absolute inset-0 bg-white/30" />
+                            <span className="absolute inset-0 bg-background/30" />
                             {i === current && (
                                 <span
                                     key={progressKey}
-                                    className="absolute inset-y-0 left-0 bg-white origin-left"
+                                    className="absolute inset-y-0 left-0 bg-background origin-left"
                                     style={{
                                         animation: isPaused
                                             ? 'none'
@@ -193,7 +193,7 @@ export function HeroSection() {
                     ))}
 
                     {/* Slide counter */}
-                    <span className="ms-2 text-xs text-white/50 tabular-nums font-light">
+                    <span className="ms-2 text-xs text-white/50 tabular-nums  ">
                         {String(current + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}
                     </span>
                 </div>
@@ -204,7 +204,7 @@ export function HeroSection() {
                 onClick={prev}
                 disabled={isTransitioning}
                 aria-label="Previous slide"
-                className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors disabled:opacity-0"
+                className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-white/30 bg-background/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-background/20 transition-colors disabled:opacity-0"
             >
                 <ChevronLeft className="w-5 h-5" />
             </button>
@@ -212,7 +212,7 @@ export function HeroSection() {
                 onClick={next}
                 disabled={isTransitioning}
                 aria-label="Next slide"
-                className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors disabled:opacity-0"
+                className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-white/30 bg-background/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-background/20 transition-colors disabled:opacity-0"
             >
                 <ChevronRight className="w-5 h-5" />
             </button>

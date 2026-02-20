@@ -77,7 +77,7 @@ const mockProduct: Product = {
 export default function ProductPage() {
     return (
         <>
-            <main className="min-h-screen bg-white pt-20">
+            <main className="min-h-screen bg-background pt-20">
                 <Container className="py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                         <div className="lg:sticky lg:top-24 h-fit">
@@ -91,7 +91,7 @@ export default function ProductPage() {
                         </div>
                     </div>
                     <div className="mt-24 border-t border-neutral-200 pt-12">
-                        <h2 className="text-2xl font-light tracking-wide mb-8">
+                        <h2 className="text-2xl   tracking-wide mb-8">
                             You May Also Like
                         </h2>
                     </div>

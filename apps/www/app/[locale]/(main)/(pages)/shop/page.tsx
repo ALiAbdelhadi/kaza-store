@@ -50,51 +50,45 @@ export default function ShopPage() {
     const canGoPrev = filters.page !== undefined && filters.page > 1;
 
     return (
-        <main className="min-h-screen bg-white pt-20">
+        <main className="min-h-screen bg-background pt-20">
             <Container className="py-12">
-                {/* Header */}
                 <div className="flex flex-col gap-6 mb-10">
                     <div className="flex items-start justify-between">
                         <div>
-                            <h1 className="text-3xl font-light tracking-wide">Shop</h1>
+                            <h1 className="text-3xl   tracking-wide">Shop</h1>
                             {data && (
-                                <p className="text-sm text-neutral-500 mt-1">
+                                <p className="text-sm text-muted-foreground/90 mt-1">
                                     {data.meta.total} products
                                 </p>
                             )}
                         </div>
                     </div>
-
-                    {/* Filters Bar */}
                     <div className="flex flex-col sm:flex-row gap-3">
-                        {/* Search */}
                         <div className="relative flex-1 max-w-sm">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                             <input
                                 type="text"
                                 value={searchInput}
                                 onChange={(e) => setSearchInput(e.target.value)}
                                 onKeyDown={handleKeyDown}
                                 placeholder="Search products..."
-                                className="w-full border border-neutral-300 pl-9 pr-9 py-2.5 text-sm font-light focus:outline-none focus:border-neutral-900 rounded-sm transition-colors"
+                                className="w-full border border-neutral-300 pl-9 pr-9 py-2.5 text-sm   focus:outline-none focus:border-neutral-900 rounded-sm transition-colors"
                             />
                             {searchInput && (
                                 <button
                                     onClick={clearSearch}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-900"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-neutral-900"
                                 >
                                     <X className="w-4 h-4" />
                                 </button>
                             )}
                         </div>
-
-                        {/* Sort */}
                         <div className="flex items-center gap-2">
-                            <SlidersHorizontal className="w-4 h-4 text-neutral-400 flex-shrink-0" />
+                            <SlidersHorizontal className="w-4 h-4 text-muted-foreground shrink-0" />
                             <select
                                 value={filters.sort}
                                 onChange={(e) => updateFilter('sort', e.target.value as SortOption)}
-                                className="border border-neutral-300 px-3 py-2.5 text-sm font-light focus:outline-none focus:border-neutral-900 rounded-sm transition-colors bg-white cursor-pointer"
+                                className="border border-neutral-300 px-3 py-2.5 text-sm   focus:outline-none focus:border-neutral-900 rounded-sm transition-colors bg-background cursor-pointer"
                             >
                                 {SORT_OPTIONS.map((opt) => (
                                     <option key={opt.value} value={opt.value}>
@@ -104,24 +98,20 @@ export default function ShopPage() {
                             </select>
                         </div>
                     </div>
-
-                    {/* Active search indicator */}
                     {filters.search && (
                         <div className="flex items-center gap-2">
-                            <span className="text-sm text-neutral-500">
+                            <span className="text-sm text-muted-foreground/90">
                                 Results for &quot;{filters.search}&quot;
                             </span>
                             <button
                                 onClick={clearSearch}
-                                className="text-xs text-neutral-400 hover:text-neutral-900 underline"
+                                className="text-xs text-muted-foreground hover:text-neutral-900 underline"
                             >
                                 Clear
                             </button>
                         </div>
                     )}
                 </div>
-
-                {/* Content */}
                 {isLoading ? (
                     <ProductGridSkeleton count={12} />
                 ) : isError ? (
@@ -146,8 +136,6 @@ export default function ShopPage() {
                 ) : (
                     <>
                         <ProductGrid products={data.data} />
-
-                        {/* Pagination */}
                         {data.meta.last_page > 1 && (
                             <div className="flex items-center justify-center gap-4 mt-16">
                                 <Button
@@ -158,7 +146,7 @@ export default function ShopPage() {
                                 >
                                     Previous
                                 </Button>
-                                <span className="text-sm text-neutral-500">
+                                <span className="text-sm text-muted-foreground/90">
                                     Page {data.meta.current_page} of {data.meta.last_page}
                                 </span>
                                 <Button

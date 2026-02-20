@@ -18,8 +18,8 @@ export function EmptyState({ title, description, action, className }: EmptyState
             <div className="w-16 h-16 rounded-full bg-neutral-100 flex items-center justify-center mb-6">
                 <span className="text-2xl text-neutral-300">✕</span>
             </div>
-            <h3 className="text-lg font-light tracking-wide text-neutral-900 mb-2">{title}</h3>
-            <p className="text-sm text-neutral-500 max-w-xs leading-relaxed mb-8">{description}</p>
+            <h3 className="text-lg   tracking-wide text-neutral-900 mb-2">{title}</h3>
+            <p className="text-sm text-muted-foreground/90 max-w-xs leading-relaxed mb-8">{description}</p>
             {action && (
                 <Button variant="outline" size="lg" asChild>
                     <Link href={action.href}>{action.label}</Link>

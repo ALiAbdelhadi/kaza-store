@@ -24,7 +24,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
     if (isLoading) {
         return (
-            <main className="min-h-screen bg-white pt-20">
+            <main className="min-h-screen bg-background pt-20">
                 <Container className="py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                         <ProductDetailImageSkeleton />
@@ -37,7 +37,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
     if (isError) {
         return (
-            <main className="min-h-screen bg-white pt-20">
+            <main className="min-h-screen bg-background pt-20">
                 <Container className="py-12">
                     <ErrorMessage message={error?.message} onRetry={() => refetch()} />
                 </Container>
@@ -62,7 +62,7 @@ export default function ProductPage({ params }: ProductPageProps) {
     };
 
     return (
-        <main className="min-h-screen bg-white pt-20">
+        <main className="min-h-screen bg-background pt-20">
             <Container className="py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     <div className="lg:sticky lg:top-24 h-fit">

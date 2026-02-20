@@ -235,8 +235,6 @@ export function CheckoutForm({ cart }: CheckoutFormProps) {
                         </FieldGroup>
                     </div>
                 </section>
-
-                {/* Payment Method */}
                 <section>
                     <h2 className="text-base font-medium tracking-wide mb-6">Payment Method</h2>
                     <div className="space-y-3">
@@ -264,8 +262,6 @@ export function CheckoutForm({ cart }: CheckoutFormProps) {
                         )}
                     </div>
                 </section>
-
-                {/* Order Notes */}
                 <section>
                     <h2 className="text-base font-medium tracking-wide mb-4">Order Notes (Optional)</h2>
                     <textarea
@@ -273,22 +269,18 @@ export function CheckoutForm({ cart }: CheckoutFormProps) {
                         onChange={(e) => setNotes(e.target.value)}
                         placeholder="Any special instructions for your order..."
                         rows={3}
-                        className="w-full border border-neutral-300 px-4 py-3 text-sm font-light focus:outline-none focus:border-neutral-900 rounded-sm resize-none transition-colors"
+                        className="w-full border border-neutral-300 px-4 py-3 text-sm   focus:outline-none focus:border-neutral-900 rounded-sm resize-none transition-colors"
                     />
                 </section>
             </div>
-
-            {/* Right: Order Summary & CTA */}
             <div className="lg:col-span-2">
                 <div className="sticky top-24 space-y-6">
                     <div className="border border-neutral-200 rounded-sm p-6">
                         <OrderSummary cart={cart} />
                     </div>
-
                     {errors.root && (
                         <p className="text-sm text-red-500 text-center">{errors.root}</p>
                     )}
-
                     <Button
                         variant="default"
                         size="lg"
@@ -298,8 +290,7 @@ export function CheckoutForm({ cart }: CheckoutFormProps) {
                     >
                         {checkout.isPending ? 'Placing Order...' : 'Place Order'}
                     </Button>
-
-                    <p className="text-xs text-center text-neutral-400 leading-relaxed">
+                    <p className="text-xs text-center text-muted-foreground leading-relaxed">
                         By placing your order, you agree to our Terms of Service and Privacy Policy.
                     </p>
                 </div>
@@ -318,9 +309,9 @@ interface FieldGroupProps {
 function FieldGroup({ label, error, required, children }: FieldGroupProps) {
     return (
         <div className="space-y-1">
-            <label className="block text-xs tracking-widest text-neutral-500 uppercase">
+            <label className="block text-xs tracking-widest text-muted-foreground/90 uppercase">
                 {label}
-                {required && <span className="text-neutral-400 ml-1">*</span>}
+                {required && <span className="text-muted-foreground ml-1">*</span>}
             </label>
             {children}
             {error && <p className="text-xs text-red-500">{error}</p>}
@@ -329,7 +320,7 @@ function FieldGroup({ label, error, required, children }: FieldGroupProps) {
 }
 
 function inputClass(hasError: boolean): string {
-    return `w-full border px-4 py-3 text-sm font-light focus:outline-none rounded-sm transition-colors ${hasError
+    return `w-full border px-4 py-3 text-sm   focus:outline-none rounded-sm transition-colors ${hasError
             ? 'border-red-400 focus:border-red-500'
             : 'border-neutral-300 focus:border-neutral-900'
         }`;

@@ -45,24 +45,24 @@ export function CartItemRow({ item }: CartItemRowProps) {
                 <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                         {item.product.brand && (
-                            <p className="text-xs tracking-widest text-neutral-400 uppercase mb-0.5">
+                            <p className="text-xs tracking-widest text-muted-foreground uppercase mb-0.5">
                                 {item.product.brand.name}
                             </p>
                         )}
-                        <h3 className="text-sm font-light tracking-wide truncate">{item.product.name}</h3>
+                        <h3 className="text-sm   tracking-wide truncate">{item.product.name}</h3>
                         <div className="flex gap-3 mt-1">
                             {item.variant_id && (
-                                <p className="text-xs text-neutral-500">Color: {item.variant_id}</p>
+                                <p className="text-xs text-muted-foreground/90">Color: {item.variant_id}</p>
                             )}
                             {item.size_id && (
-                                <p className="text-xs text-neutral-500">Size: {item.size_id.toUpperCase()}</p>
+                                <p className="text-xs text-muted-foreground/90">Size: {item.size_id.toUpperCase()}</p>
                             )}
                         </div>
                     </div>
                     <button
                         onClick={handleRemove}
                         disabled={isLoading}
-                        className="text-neutral-400 hover:text-neutral-900 transition-colors shrink-0"
+                        className="text-muted-foreground hover:text-neutral-900 transition-colors shrink-0"
                         aria-label="Remove item"
                     >
                         <X className="w-4 h-4" />
@@ -79,7 +79,7 @@ export function CartItemRow({ item }: CartItemRowProps) {
                         >
                             <Minus className="w-3 h-3" />
                         </button>
-                        <span className="text-sm font-light w-4 text-center">{item.quantity}</span>
+                        <span className="text-sm   w-4 text-center">{item.quantity}</span>
                         <button
                             onClick={() => handleQuantityChange(item.quantity + 1)}
                             disabled={item.quantity >= 10 || isLoading}
@@ -89,7 +89,7 @@ export function CartItemRow({ item }: CartItemRowProps) {
                             <Plus className="w-3 h-3" />
                         </button>
                     </div>
-                    <p className="text-sm font-light">EGP {item.subtotal.toLocaleString()}</p>
+                    <p className="text-sm  ">EGP {item.subtotal.toLocaleString()}</p>
                 </div>
             </div>
         </div>

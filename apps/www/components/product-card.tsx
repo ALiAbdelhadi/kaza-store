@@ -19,7 +19,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             href={`/products/${product.slug}`}
             className={cn('group block', className)}
         >
-            <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-neutral-100">
+            <div className="relative aspect-3/4 overflow-hidden rounded-sm bg-neutral-100">
                 {product.thumbnail ? (
                     <Image
                         src={product.thumbnail}
@@ -39,7 +39,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
                     </div>
                 )}
                 {product.stock === 0 && (
-                    <div className="absolute inset-0 bg-white/60 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-background/60 flex items-center justify-center">
                         <span className="text-neutral-600 text-xs tracking-widest font-medium uppercase">
                             Out of Stock
                         </span>
@@ -48,25 +48,25 @@ export function ProductCard({ product, className }: ProductCardProps) {
             </div>
             <div className="mt-3 space-y-1">
                 {product.brand && (
-                    <p className="text-xs tracking-widest text-neutral-400 uppercase">
+                    <p className="text-xs tracking-widest text-muted-foreground uppercase">
                         {product.brand.name}
                     </p>
                 )}
-                <h3 className="text-sm font-light tracking-wide text-neutral-900 line-clamp-2">
+                <h3 className="text-sm   tracking-wide text-neutral-900 line-clamp-2">
                     {product.name}
                 </h3>
                 <div className="flex items-center gap-2">
-                    <span className="text-sm font-light">
+                    <span className="text-sm  ">
                         EGP {product.final_price.toLocaleString()}
                     </span>
                     {hasDiscount && (
-                        <span className="text-xs text-neutral-400 line-through">
+                        <span className="text-xs text-muted-foreground line-through">
                             EGP {product.price.toLocaleString()}
                         </span>
                     )}
                 </div>
                 {hasDiscount && savings > 0 && (
-                    <p className="text-xs text-neutral-500">Save EGP {savings.toLocaleString()}</p>
+                    <p className="text-xs text-muted-foreground/90">Save EGP {savings.toLocaleString()}</p>
                 )}
             </div>
         </Link>

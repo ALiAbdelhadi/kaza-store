@@ -43,7 +43,7 @@ export function LanguageSwitcher({ className, variant = 'pill' }: LanguageSwitch
                                 'text-xs tracking-widest transition-colors duration-200',
                                 locale === l.code
                                     ? 'text-neutral-900 font-medium'
-                                    : 'text-neutral-400 hover:text-neutral-600'
+                                    : 'text-muted-foreground hover:text-neutral-600'
                             )}
                         >
                             {l.label}
@@ -72,7 +72,7 @@ export function LanguageSwitcher({ className, variant = 'pill' }: LanguageSwitch
             <span
                 aria-hidden
                 className={cn(
-                    'absolute top-0.5 bottom-0.5 w-[calc(50%-2px)] rounded-full bg-neutral-900 transition-transform duration-300 ease-in-out',
+                    'absolute top-0.5 bottom-0.5 w-[calc(50%-2px)] rounded-full bg-neutral-900 transition-transform duration-300 ease-in-out cursor-pointer',
                     locale === 'ar' ? 'translate-x-[calc(100%+2px)]' : 'translate-x-0.5'
                 )}
             />
@@ -85,10 +85,10 @@ export function LanguageSwitcher({ className, variant = 'pill' }: LanguageSwitch
                     aria-pressed={locale === l.code}
                     aria-label={`Switch to ${l.nativeLabel}`}
                     className={cn(
-                        'relative z-10 w-8 h-6 flex items-center justify-center text-[10px] font-medium tracking-wider rounded-full transition-colors duration-300',
+                        'relative z-10 w-8 h-6 flex items-center justify-center text-[10px] font-medium tracking-wider rounded-full transition-colors duration-300 cursor-pointer',
                         locale === l.code
                             ? 'text-white cursor-default'
-                            : 'text-neutral-500 hover:text-neutral-800 cursor-pointer'
+                            : 'text-muted-foreground/90 hover:text-neutral-800 cursor-pointer'
                     )}
                 >
                     {l.label}

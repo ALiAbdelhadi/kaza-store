@@ -12,8 +12,6 @@ import { useState } from 'react';
 import ProductVariants from './product-variants';
 import { Button } from './ui/button';
 
-// Props accept a subset of the full Product type to maintain
-// compatibility with both mock data and real API responses.
 interface ProductInfoProduct {
     id: string;
     name: string;
@@ -62,7 +60,7 @@ export default function ProductInfo({ product, onAddToCart, isAddingToCart }: Pr
                 <h1 className="md:text-4xl text-3xl font-normal tracking-wide mb-2">
                     {product.name}
                 </h1>
-                <p className="text-2xl font-light font-serif">
+                <p className="text-2xl   font-serif">
                     {product.currency} {product.price.toLocaleString()}
                 </p>
             </div>

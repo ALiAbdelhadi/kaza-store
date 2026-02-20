@@ -14,8 +14,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
 
     return (
         <div className="space-y-4">
-            {/* Main Image */}
-            <div className="relative aspect-[3/4] bg-neutral-100 overflow-hidden rounded-sm">
+            <div className="relative aspect-3/4 bg-neutral-100 overflow-hidden rounded-sm">
                 <Image
                     src={images[currentImage].url}
                     alt={images[currentImage].alt}
@@ -24,8 +23,6 @@ export default function ProductImageGallery({ images, productName }: ProductImag
                     priority
                 />
             </div>
-
-            {/* Thumbnail Navigation */}
             {images.length > 1 && (
                 <div className="grid grid-cols-4 gap-3">
                     {images.map((image, index) => (
@@ -51,10 +48,8 @@ export default function ProductImageGallery({ images, productName }: ProductImag
                     ))}
                 </div>
             )}
-
-            {/* Image Counter */}
             <div className="text-center">
-                <span className="text-xs tracking-wider text-neutral-500">
+                <span className="text-xs tracking-wider text-muted-foreground/90">
                     {currentImage + 1} / {images.length}
                 </span>
             </div>

@@ -36,11 +36,11 @@ export function CtaSection() {
                             {t('eyebrow')}
                         </p>
                     </div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.08] tracking-tight mb-6">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl   text-white leading-[1.08] tracking-tight mb-6">
                         {t('headline')}
                     </h2>
-                    <div className="w-12 h-px bg-white/20 mb-6" />
-                    <p className="text-sm sm:text-base text-white/50 font-light leading-relaxed max-w-lg mb-10">
+                    <div className="w-12 h-px bg-background/20 mb-6" />
+                    <p className="text-sm sm:text-base text-white/50   leading-relaxed max-w-lg mb-10">
                         {t('body')}
                     </p>
                     <div className="flex flex-wrap gap-4">
@@ -48,7 +48,7 @@ export function CtaSection() {
                             variant="default"
                             size="lg"
                             asChild
-                            className="bg-white text-neutral-900 hover:bg-neutral-100 text-xs tracking-widest px-8"
+                            className="bg-background text-neutral-900 hover:bg-neutral-100 text-xs tracking-widest px-8"
                         >
                             <Link href="/shop" className="inline-flex items-center gap-2 group">
                                 {t('primary')}
@@ -59,7 +59,7 @@ export function CtaSection() {
                             variant="ghost"
                             size="lg"
                             asChild
-                            className="text-white/60 hover:text-white hover:bg-white/10 text-xs tracking-widest px-8 border border-white/15 hover:border-white/25"
+                            className="text-white/60 hover:text-white hover:bg-background/10 text-xs tracking-widest px-8 border border-white/15 hover:border-white/25"
                         >
                             <Link href="/orders/track">
                                 {t('secondary')}
@@ -74,7 +74,7 @@ export function CtaSection() {
                         { value: '500+', label: 'Happy Brands', suffix: '' },
                     ].map((stat) => (
                         <div key={stat.label}>
-                            <p className="text-2xl sm:text-3xl font-light text-white tracking-tight">
+                            <p className="text-2xl sm:text-3xl   text-white tracking-tight">
                                 {stat.value}
                                 <span className="text-white/40 text-lg">{stat.suffix}</span>
                             </p>
