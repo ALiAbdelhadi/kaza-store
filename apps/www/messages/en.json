@@ -4,5 +4,72 @@
         "shop": "Shop",
         "stories": "Stories",
         "journal": "Journal"
+    },
+    "hero": {
+        "slide1": {
+            "eyebrow": "New Collection — SS 2026",
+            "headline": "Crafted for\nthe Modern\nEgyptian Woman",
+            "cta": "Explore Collection"
+        },
+        "slide2": {
+            "eyebrow": "Exclusive Brands",
+            "headline": "Wear the\nStory of\nHandcraft",
+            "cta": "Shop Now"
+        },
+        "slide3": {
+            "eyebrow": "Limited Drops",
+            "headline": "Understated\nLuxury,\nReconsidered",
+            "cta": "View New Arrivals"
+        }
+    },
+    "brands": {
+        "eyebrow": "Our Curated Brands",
+        "headline": "Only the finest labels, handpicked for you."
+    },
+    "popularProducts": {
+        "eyebrow": "Most Popular",
+        "headline": "What Everyone Is Wearing",
+        "viewAll": "View All"
+    },
+    "cta": {
+        "eyebrow": "Free Delivery",
+        "headline": "Delivered to Your Door",
+        "body": "Order before 10 PM and receive your items the very next morning. Free standard delivery on all orders above EGP 500.",
+        "primary": "Shop Now",
+        "secondary": "Track Your Order"
+    },
+    "footer": {
+        "tagline": "Curating the finest fashion for Egypt's modern wardrobe.",
+        "newsletter": {
+            "label": "Stay in the loop",
+            "placeholder": "Your email address",
+            "cta": "Subscribe"
+        },
+        "shop": {
+            "title": "Shop",
+            "newArrivals": "New Arrivals",
+            "allProducts": "All Products",
+            "brands": "Brands",
+            "sale": "Sale"
+        },
+        "company": {
+            "title": "Company",
+            "about": "About Us",
+            "careers": "Careers",
+            "press": "Press",
+            "stories": "Stories"
+        },
+        "support": {
+            "title": "Support",
+            "track": "Track Order",
+            "returns": "Returns & Exchanges",
+            "faq": "FAQ",
+            "contact": "Contact Us"
+        },
+        "legal": {
+            "rights": "All rights reserved.",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        }
     }
 }

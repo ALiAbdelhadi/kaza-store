@@ -6,37 +6,54 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Product } from '@/types';
+import { AddToCartPayload, Product } from '@/types';
 import { MapPin, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
 import ProductVariants from './product-variants';
 import { Button } from './ui/button';
 
-interface ProductInfoProps {
-    product: Product;
+// Props accept a subset of the full Product type to maintain
+// compatibility with both mock data and real API responses.
+interface ProductInfoProduct {
+    id: string;
+    name: string;
+    price: number;
+    currency: string;
+    description: string;
+    variants: Product['variants'];
+    sizes: Product['sizes'];
+    details: Product['details'];
+    inStock: boolean;
+    sku: string;
 }
 
-export default function ProductInfo({ product }: ProductInfoProps) {
-    const [expandedSection, setExpandedSection] = useState<string | null>(null);
+interface ProductInfoProps {
+    product: ProductInfoProduct;
+    onAddToCart?: (payload: AddToCartPayload) => void;
+    isAddingToCart?: boolean;
+}
+
+export default function ProductInfo({ product, onAddToCart, isAddingToCart }: ProductInfoProps) {
     const [selectedVariant, setSelectedVariant] = useState<string>('');
     const [selectedSize, setSelectedSize] = useState<string>('');
     const [quantity, setQuantity] = useState<number>(1);
-
-    const toggleSection = (section: string) => {
-        setExpandedSection(expandedSection === section ? null : section);
-    };
+    const [sizeError, setSizeError] = useState(false);
 
     const handleAddToBag = () => {
         if (!selectedSize) {
-            alert('Please select a size');
+            setSizeError(true);
             return;
         }
-        console.log('Adding to bag:', {
-            productId: product.id,
-            variantId: selectedVariant,
-            sizeId: selectedSize,
-            quantity,
-        });
+        setSizeError(false);
+
+        if (onAddToCart) {
+            onAddToCart({
+                product_id: product.id,
+                variant_id: selectedVariant,
+                size_id: selectedSize,
+                quantity,
+            });
+        }
     };
 
     return (
@@ -46,7 +63,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
                     {product.name}
                 </h1>
                 <p className="text-2xl font-light font-serif">
-                    {product.currency}{product.price}
+                    {product.currency} {product.price.toLocaleString()}
                 </p>
             </div>
             <p className="text-base leading-relaxed text-muted-foreground font-normal">
@@ -56,19 +73,30 @@ export default function ProductInfo({ product }: ProductInfoProps) {
                 variants={product.variants}
                 sizes={product.sizes}
                 onVariantChange={setSelectedVariant}
-                onSizeChange={setSelectedSize}
+                onSizeChange={(id) => {
+                    setSelectedSize(id);
+                    if (sizeError) setSizeError(false);
+                }}
                 onQuantityChange={setQuantity}
             />
+            {sizeError && (
+                <p className="text-sm text-red-500 -mt-4">Please select a size to continue.</p>
+            )}
             <Button
-                variant={"default"}
-                size={"icon-lg"}
+                variant="default"
+                size="icon-lg"
                 onClick={handleAddToBag}
+                disabled={!product.inStock || isAddingToCart}
                 className="w-full text-sm tracking-widest flex items-center justify-center gap-2"
             >
-                Add to Bag
-                <ShoppingBag />
+                {isAddingToCart ? 'Adding...' : product.inStock ? 'Add to Bag' : 'Out of Stock'}
+                {!isAddingToCart && product.inStock && <ShoppingBag />}
             </Button>
-            <Button variant={"outline"} size={"lg"} className="w-full text-sm tracking-wide flex items-center justify-center  gap-2">
+            <Button
+                variant="outline"
+                size="lg"
+                className="w-full text-sm tracking-wide flex items-center justify-center gap-2"
+            >
                 <MapPin className="w-4 h-4" />
                 <span>Check In-Store Availability</span>
             </Button>
@@ -76,12 +104,9 @@ export default function ProductInfo({ product }: ProductInfoProps) {
                 {product.details.fit && (
                     <AccordionItem value="fit">
                         <AccordionTrigger>Fit Details</AccordionTrigger>
-                        <AccordionContent>
-                            {product.details.fit}
-                        </AccordionContent>
+                        <AccordionContent>{product.details.fit}</AccordionContent>
                     </AccordionItem>
                 )}
-
                 {product.details.fabrication && (
                     <AccordionItem value="fabrication">
                         <AccordionTrigger>Fabrication & Care</AccordionTrigger>
@@ -91,13 +116,10 @@ export default function ProductInfo({ product }: ProductInfoProps) {
                         </AccordionContent>
                     </AccordionItem>
                 )}
-
                 {product.details.shipping && (
                     <AccordionItem value="shipping">
                         <AccordionTrigger>Shipping & Returns</AccordionTrigger>
-                        <AccordionContent>
-                            {product.details.shipping}
-                        </AccordionContent>
+                        <AccordionContent>{product.details.shipping}</AccordionContent>
                     </AccordionItem>
                 )}
             </Accordion>

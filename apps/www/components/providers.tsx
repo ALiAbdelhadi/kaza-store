@@ -1,5 +1,6 @@
 "use client"
 
+import { AuthProvider } from "@/contexts/auth-context"
 import { LoadingProvider } from "@/components/providers/loading-provider"
 import { NavigationProvider } from "@/components/providers/navigation-provider"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
@@ -10,11 +11,13 @@ export function Providers({ children }: { children: ReactNode }) {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <LoadingProvider>
-                <NavigationProvider>
-                    {children}
-                </NavigationProvider>
-            </LoadingProvider>
+            <AuthProvider>
+                <LoadingProvider>
+                    <NavigationProvider>
+                        {children}
+                    </NavigationProvider>
+                </LoadingProvider>
+            </AuthProvider>
         </QueryClientProvider>
     )
 }
